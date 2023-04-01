@@ -1,0 +1,569 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Prezentace: Setkání 8 - Jak rozumět technologiím</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/simple.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+    <style>
+      img.scale-60vh { height: 60vh;}
+      img.scale-50vh { height: 50vh;}
+      img.scale-40vh { height: 40vh;}
+      img.scale-30vh { height: 30vh;}
+      img.scale-25vh { height: 25vh;}
+
+      :root {
+        --r-main-font: Helvetica, sans-serif;
+        --r-main-font-size: 35px;
+      }
+      .full {
+        height:100%;
+        width:100%;
+      }
+
+      .caption {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        max-width: 60%;
+        text-align: right;
+
+        font-size: 0.6em;
+        line-height: 1.2em;
+        padding: 0.2em;
+      }
+      .black{
+        color: black;
+        background-color: rgba(255, 255, 255, .8);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown data-separator-notes="^Note:">
+          <textarea data-template>
+## Jak rozumět technologiím
+#### (Teorie humanitních věd 2, 3. 4. 2023)
+
+vizualizace, data, capta
+
+---
+## Čtení Latoura
+
+- [Poznání a vizualizace aneb jak myslet očima a rukama](https://teorievedy.flu.cas.cz/index.php/tv/article/download/446/444)
+
+</textarea></section>
+
+<section data-transition="none" data-background-image="img/8/the_horse_in_motion_2_resized.jpg" data-background-size="contain" data-background-color="black" class="full">
+<div class="caption black">
+Eadweard Muybridge: Cval koně (1878)
+<!--
+In the 19th century, it seemed as though Muybridge had used photography to stop time.
+When the Industrial Revolution was underway, and scholars were obsessed with identifying,
+cataloging and potentially mechanizing nature, Muybridge’s photo sequence of a moving horse was a milestone.
+
+“The breakthrough is that the camera can see things that the human eye can't see,
+and that we can use photography to access our world beyond what we know it to be,”
+
+Muybridge was commissioned by the builder of the Central Pacific Railroad, Leland Stanford,
+to provide proof that when a horse galloped, there is a point at which it has all four feet off the ground.
+The quest was difficult.
+Initial use of a wet plate was too slow for to get a sharp image with the horse running at such a fast speed.
+Eventually, he found a way to “ripen” the emulsion by storing it for multiple days at high temperatures.
+This increased the effective ISO and so decreased the exposure time.
+He succeeded in freezing the motion better.
+Unfortunately, the results were still underexposed.
+He ended up retouching the underexposed images to bring out more details.
+This negatively impacted the public. They did not see the underlying work as legitimate.
+Even at the start of photography, people were quick to judge an altered image as “fake” or “untrue” no matter how slight the retouching.
+
+Muybridge continued to modify his technique and eventually figured out a strategy.
+He put a white background up against the inner rail of a horse racetrack.
+Then, he put 24 individual cameras along the outer rail of the racetrack.
+He strung 24 individual wires, each connected to the shutter switch of a different camera mounted across the track.
+The idea was simple. When the horse ran past, it would break through the wires which would trigger the shutters in sequence.
+It worked. Muybridge did indeed prove that when a horse gallops, all four legs are off the ground.
+It looked far different than what anyone expected.
+People expected the images to confirm the form of children’s hobby horse toys; one where the horse’s legs are outstretched both in the front and back at the same time.
+The sequence of photographs proved that was not how a horse runs.
+The images clearly showed the suspension occurs when all four legs are tucked up under the horse’s abdomen.
+This breakthrough information encouraged Leland Stanford to commission Muybridge to repeat the study with other animals.
+
+fotografická puška
+- jeden nástroj na zachycení a studium pohybu
+- Étienne-Jules Marey, a French scientist and chronophotographer
+
+shoot
+The meaning "to photograph" (especially a movie) is from 1890.
+
+-->
+</div>
+</section>
+
+<section data-markdown data-separator-notes="^Note:">
+<textarea data-template>
+
+### Cholera
+- John Snow: Mapa úmrtí na choleru (1854)
+- proti teorii miasmatu
+
+Note:
+Případ: znalost vyčtená z mapy vs. jen pouhý popis
+
+- cholera, Londýn (1854)
+- teorie miasmatu – teorie zkaženého vzduchu, již překonaná, odůvodňující výskyt závažných infekčních chorob
+- původce nákazy: studna necelý metr od prasklé odpadní jímky na Broad Street 40
+- Snow přinutil město, aby studnu vyřadila z provozu
+  - vědecký názor: nebyl ještě znám bakteriální původ nemocí, takže pod špinavou vodou si nikdo neuměl nic představit
+
+bakteriální podstata nemocí
+  - německý lékař Robert Koch a bakterie způsobující antrax (sněť)
+  - 30. ledna 1876 se mu podařilo vypěstovat původce v moku z volského oka a poté detailně popsal životní cyklus bakterie antraxu
+  - při výzkumu použil průkopnicky mj. mikrofotografii
+  - zjistil, že mikroby vytváří spóry, které jsou velmi odolné a mohou přečkat dlouhou dobu v nepříznivých podmínkách
+  - Louis Pasteur si od Kocha opatřil bakterii a vyvinul očkování oslabeným bacilem (všiml si, že chrání kuřata před další nákazou)
+    - první očkování bylo proti pravým neštovicím kravskými neštovicemi (vacca=kráva -> vakcinace)
+
+Zdroj
+https://www.theguardian.com/news/datablog/2013/mar/15/john-snow-cholera-map
+
+</textarea></section>
+
+<section data-transition="none" data-background-image="img/8/Snow-map.jpg" data-background-size="contain" data-background-color="black" class="full">
+<div class="caption black">
+John Snow: Mapa úmrtí na choleru (1854)
+<!--
+-->
+</div>
+</section>
+
+<section data-markdown data-separator-notes="^Note:">
+<textarea data-template>
+### Vizualizace &amp; humanities
+- ISOTYPE (International System of Typographic Picture Education)
+  - Gesellschafts- und Wirtschaftsmuseum in Wien (1925-1934)
+  - Otto a Marie Neurath
+  - Gerd Arntz (autor piktogramů)
+
+Note:
+
+ISOTYPE
+- Vienna Method of Pictorial Statistics (Wiener Methode der Bildstatistik)
+- developed at the Gesellschafts- und Wirtschaftsmuseum in Wien (Social and Economic Museum of Vienna)
+- between 1925 and 1934
+- Rudá Vídeň
+
+Otto Neurath
+- marxista, věřil v možnost jednotné komunikace a sílu vzdělání
+- důležitým členem vídeňského koužku, s Rudolfem Carnapem pravděpodobný spoluator manifestu logického pozitivismu (1929)
+- ve vědě nejsou hloubky, pouze povrchy
+
+
+Zdroj:
+ISOTYPE
+ - https://www.themarginalian.org/2011/03/08/the-transformer-isotype/
+
+</textarea></section>
+
+<section data-transition="none" data-background-image="img/8/isotype-kraftwagen.png" data-background-size="contain" data-background-color="black" class="full">
+<div class="caption black">
+ISOTYPE (Ukázka 1)
+</div>
+</section>
+
+<section data-transition="none" data-background-image="img/8/isotype1.webp" data-background-size="contain" data-background-color="black" class="full">
+<div class="caption black">
+ISOTYPE (Ukázka 2)
+</div>
+</section>
+
+<section data-markdown data-separator-notes="^Note:">
+<textarea data-template>
+- [Every Noise at Once](https://everynoise.com/engenremap.html)
+- [The Preservation of Favoured Traces](https://fathom.info/traces/) (Ch. Darwin: O původu druhů)
+
+###
+
+Note:
+Every Noise at Once (everynoise.com) is an algorithmically-generated, audio-annotated, dynamically evolving map of the music genre space. It arrays the 700+ major music genres tracked (so far) by The Echo Nest (the.echonest.com) in a readability-adjusted scatter-plot by the genres' aggregate audio characteristics.
+The X axis moves from dense and atmospheric music on the left to choppier, bouncier, sharper music on the right. The Y axis moves from highly organic and acoustic music at the bottom to highly synthetic and mechanized dance forms at the top. The visual weight of each genre is determined by how actively its songs are currently being played, bought, reviewed and discussed online.
+
+Our computers can now enter plausibly into arguments over almost 500
+genres, from a cappella to zydeco. Rock is the biggest and most central; we
+calculate a centrality score, of course, because thatʼs the kind of thing we
+do, so we mean that quantitatively. The least central genre is “skweee,”
+which most of us hadnʼt heard of before this chart, either.
+
+There are other ways to plot music genres, of course, than the one used by
+the map at any given time. We use 10 dimensions internally, and two
+completely independent measures of genre similarity. Iʼve flipped the map
+once already since first publishing it, and I might do so again without
+warning if I find another configuration that seems more interesting.
+
+Click any genre in the map and youʼll hear what we think is a representative
+song. These arenʼt always ideal, but theyʼre close. Click the » next to a genre
+for a similarly-clickable audio-map of the artists weʼve extrapolated for it. Hit
+“scan” at the top of any genre page, and youʼll take a randomized car radio-
+style journey through that genre. Hit “scan” at the top of the main map and
+your car will careen wildly around the entire planet.
+
+
+---
+### Rétorika vizualizací
+- [jeden dataset, mnoho interpretací](https://flowingdata.com/2017/01/24/one-dataset-visualized-25-ways/)
+- [barevné mámení](https://eagereyes.org/basics/rainbow-color-map)
+
+Note:
+Skutečně: Existuje mnoho způsobu zachycení jednoho datasetu
+
+Příklad:
+Očkávaná délka života v závislosti na datu narození dle státu
+  - vs. form follows data
+
+Otázky, které by si kladla Drucker
+  * Co je stát? Jsou v datech zachycení i migranti?
+  * Jak vypadal sběr dat pro daný rok?
+  * Byly pro každý rok použitá stejná metodologie?
+  * Jak se definuje gender?
+
+Barevné mámení
+- Strmý přechod mezi luminance (jas) a hue (barevný odstín) vytváří dojem, že
+  v polovině USA je prudká změna
+---
+### Google n-gramy (1/2)
+- co je n-gram?
+- příklady
+  - [frekvence slov](https://books.google.com/ngrams/graph?content=%2A&year_start=1800&year_end=2019&case_insensitive=on&corpus=26&smoothing=1&direct_url=t2%3B%2C%2A%3B%2Cc0%3B%2Cs0%3B%3Bthe%3B%2Cc0%3B%3Bof%3B%2Cc0%3B%3Band%3B%2Cc0%3B%3Bto%3B%2Cc0%3B%3Bin%3B%2Cc0%3B%3Ba%3B%2Cc0%3B%3Bthat%3B%2Cc0%3B%3Bis%3B%2Cc0%3B%3Bfor%3B%2Cc0%3B%3Bbe%3B%2Cc0)
+  - [mickey mouse, Marilyn Monroe](https://books.google.com/ngrams/graph?content=mickey+mouse%2CMarilyn+Monroe&year_start=1800&year_end=2019&corpus=26&smoothing=1&case_insensitive=true)
+  - [autumn](https://books.google.com/ngrams/graph?content=autumn&year_start=1800&year_end=2019&case_insensitive=on&corpus=26&smoothing=1&direct_url=t4%3B%2Cautumn%3B%2Cc0%3B%2Cs0%3B%3Bautumn%3B%2Cc0%3B%3BAutumn%3B%2Cc0%3B%3BAUTUMN%3B%2Cc0#t4%3B%2Cautumn%3B%2Cc0%3B%2Cs0%3B%3Bautumn%3B%2Cc0%3B%3BAutumn%3B%2Cc0%3B%3BAUTUMN%3B%2Cc0)
+- český národní korpus: [stále-pořád-furt](https://www.korpus.cz/slovo-v-kostce/compare/cs/st%C3%A1le--po%C5%99%C3%A1d--furt)
+
+Note:
+  Problémy s vizualizacemi ale skutečně existují. Třeba když se zaměříme na n-gramy.
+
+---
+### Google n-gramy (2/2)
+- problémy
+  - chyby při zpracování knih (OCR, 1800?-2019)
+  - definice korpusu
+  - velikost vzorku před normalizací
+  - vyhlazování
+  - spojitá čára místo sloupcového grafu
+
+Note:
+Nejasná definice korpusu
+  - American English 2019 = Books predominantly in the English language that were published in the United States.
+  - Slovo se dostane do korpusu, pokud se objeví alespoň v 40 publikacích.
+  - O moc víc se toho nedozvíme.
+
+Co lze o korupusu usoudit
+  - Predominantly scientific literarure (Figure vs figure)
+  - není to o tom, jak lidé mluví, ani o tom, co lidé čtou
+  - je to o tom, co se vydává
+
+Porovnatelnost slov
+  - Pro zkoumání jazykových jevů je třeba vědět, jaká literatura je korpusu zastoupená a v jakém poměru.
+  - Chceme stabilní podíl typů psaných záznamů, aby to bylo porovnatelné?
+  - Proč například upadá podíl slova autumn?
+
+OCR
+  - chyby při zpracování knih (OCR)
+  - knihy z roku 1800 mohou mít specifika, která se liší od dnešních
+    - jiné slitky písmen
+    - jiné tvary písmen, třeba f vypadalo v starých knihách jako s (fuck, fame vs same, funk vs sunk)
+
+Technické aspekty: vyhlasování
+  - smoothing polovina velikosti okna plovoucího průměru se středem v daném roce
+  - smoothing 1@rok 1950 = využitá data z roku 1949, 1950, 1951
+
+
+Zdroje:
+ - https://www.wired.com/2015/10/pitfalls-of-studying-language-with-google-ngram/
+
+---
+### [Tensorflow Projector](https://projector.tensorflow.org/)
+- jazykové modely a embeddingy (vnoření slov)
+- redukce vícedimenzionálních vektorů do 2/3D
+  - projekce: PSA, algoritmus: T-SNE
+- problém: interpretace vzdálenosti
+- Data Modeling vs. Algorithimc Modeling Culture
+
+Note:
+embedding (vnoření) slov:
+  - způsob číselné reprezentace slov používaný v počítačovém zpracování přirozeného jazyka
+  - vektory mají význam jen ve vztahu k ostatním vektorům, samostatně ne
+  - projekce z 200 D do 2/3 D mohou způsobit přiblížení jinak vzdálených vektorů
+    proto jsou tyto vizualizace problematické
+
+---
+### Johanna Drucker: [Humanities Approaches to Graphical Display](http://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html) (1/3)
+  - kritka epistemologické hodnoty vizualizací
+  - Problémy:
+    - *data are capta*
+    - zneviditelnění procesu tvorby dat a interpretace
+  - Protinávrhy: "humanistické" zachycení času a prostoru
+
+Note:
+
+Johanna Drucker
+- zabývá se vizuální epistemologií: knowledge as a vision
+  - co je předmětem? vizualizace, infografika, vizuální komunikace ... design
+     - zaměříme se jen na vizualizace
+     - sloupcový graf (barchart), koláčový graf (piechart), scatterplot (korelačnígraf), linechart (?)
+  - dle Latoura: obrazy, které umožňují reprezentovat komplexní vztahy z reálného světa
+  - lze je šířit a umožňují následnou manipulaci
+  - tyto obrazy mají rétorickou sílu (přesvědují, argumentují) ... vizuální komunikace, vizuální jazyk
+
+- polemický článek
+  - jak tyto vizualizační nástroje ovlivňují naše vědění
+  - co způsobuje jejich původní zakotvení v empirických vědách
+  - jak s nimi lze zacházet v oblasti humanit
+
+- součástí jsou návrhy na rozšíření vizuálního jazyka
+
+- s článkem lze také polemizovat
+
+Proč se vizualizacemi zabývat?
+  - Vizualizace umožňují zachytit a trvalet zaznamenat vztahy z reálného světa.
+  - Řeší kongnitivní omezení lidské mysli.
+  - Lidé nedokážou chápat velké množství dat a vztahů najednou. (Tabulka nebo seznam nestačí.)
+  - Umožňují odhalit zajímavé vztahy a patterny.
+  - během COVIDu jsme si užili čtení grafů víc než dost
+
+Proč je to problematické
+ - data (given) vs. capta (taken)
+ - konstruktivismus vs. realismus
+    - Most information visualizations are acts of interpretation masquerading as presentation. In other
+    words, they are images that act as if they are just showing us what is, but
+    in actuality, they are arguments made in graphical form.
+
+
+Návrh
+- Vizualizovat data takovým způsobem, aby byly vidět
+  - interpretační rámce a konstruovanost dat
+  - zobrazit "fakta" jako "interpretace"
+    - přesun od "faktů" k interpretacím, které byly zvolené v souladu s nějakou agendou
+  - nejistota
+
+Diskuze
+  - Vizualizace mají pragmatický cíl, vznikají jako odpověď na otázku, Drucker to v diskuzi nezohledňuje.
+
+---
+#### Humanities Approaches to Graphical Display (2/3)
+![](img/8/chart_depicting_new_novels_put_in_print_by_a_single_publisher_between_1855_1862.jpg)<!-- .element class="scale-25vh" -->
+- Johanna Drucker: A chart shows the number of new novels put into print by a single publisher in the years 1855-1862.
+
+---
+### Humanities Approaches to Graphical Display (3/3)
+![](img/8/chart_depicting_new_novels_put_in_print_by_a_single_publisher_between_1855_1862_with_relations.jpg)<!-- .element class="scale-25vh" -->
+- Johnanna Drucker: The “appearance” in 1855 of fourteen novels is shown in relation to the time of writing, acquisition, editing, pre-press work, and release.
+
+</textarea></section>
+
+<section data-markdown data-separator-notes="^Note:">
+<textarea data-template>
+
+Technologické okénko
+
+---
+### Jak něco najít
+
+- Hledání relevantních zdrojů
+  - [scholar.google.com](https://scholar.google.com)
+  - [elicit.org](https://elicit.org/)
+  - www.perplexity.ai
+- abstraktivní vs. extraktivní sumarizace
+
+Note:
+Proč technologické okénko:
+- Děje se toho tolik, že by bylo škoda zapomenout na aktuální dění
+- Nebude to jenom opensource, protože hodně novinek přichází z komerční sféry
+  - dřív to bývaly univerzity
+  - opensource
+
+Elicit: non-profit, "early stage product"
+  - co znamená v případě elicit non-profit?
+
+Přihlaš se a zadej
+Input1: Who wrote Double Falsehood
+- 8 nejrelevantnějších článků z 1000 předvybraných - základ technologie
+- náš článek je mezi prvními výsledky
+
+co se stane, když na odkaz klikneme
+  - vyvodíme z toho, že článek je jako zdroj opravdu relevantní (konfirmační bias)
+  - první výsledek nemusí být ten nejvíc relevantní: oxfordská teorie o Shakespearovi na googlu
+
+Průzkum výsledků
+  - Je velmi pravděpodobné, že technologie využívá jen abstrakty, protože jsou veřejné.
+     (+ citace, ze kterých lze vyčíst i potenciální kritiku, která ale zrovna u našeho článku chybí)
+  - Abstract summary: Double Falsehood's psychological style and content architecture predominantly resemble those of Shakespeare.
+      - Něco tam chybí (nebezpečí extraktivní sumarizace):
+      - Kdybychom se spolehli jen na summary, nebudeme vědět, že se článek zabývá i Fletcherem: showing some similarity with Fletcher’s signature and only traces of Theobald’s.
+
+Otázky v kontextu článku:
+- Who was Fletcher?
+- Which stylometric method has been used?
+
+Jiná otázka
+- Why is the sky blue?
+
+Otázky na hledání relevantníh zdrojů:
+- zeptej se, jestli znají nějaké databáze nebo nástroje
+
+Zvaž možnost, že by si někdo udělal prezentaci o nějaké technologii.
+Musel by ale říct, na co ji použije a jak ji bude zkoumat.
+
+---
+### Jak něco napsat
+
+- [ChatGPT](https://chat.openai.com/chat)
+- [AI/human klasifikátor](https://platform.openai.com/ai-text-classifier)
+
+Note:
+Is there some research on readership of romance novels?
+Can you name some authors who have written about this topic?
+How would you summarize Janice A. Radway's essay?
+What methodlogy did Radway use in her research?
+Is there any critical response to Radway's text?
+
+What are the conclusions of Radway's essay?
+Another key conclusion of Radway's essay is that the romance novel industry is structured to meet the demands of its predominantly female readership, and that this industry reinforces gendered expectations and power dynamics. She argues that while the novels themselves may offer women a sense of empowerment, the industry as a whole is ultimately controlled by male-dominated publishing houses and marketing strategies.
+
+What is the argumentation presented in Radway's essay?
+Who did criticize Radway for overemphasising escape in her essay?
+
+
+nedůvěra k modelům
+It’s a language model, and not a knowledge model.
+
+klasifikátor generovaného textu
+- Requires a minimum of 1,000 characters, which is approximately 150 - 250 words.
+- The classifier isn’t always accurate; it can mislabel both AI-generated and human-written text.
+- AI-generated text can be edited easily to evade the classifier.
+- The classifier is likely to get things wrong on text written by children and on text not in English, because it was primarily trained on English content written by adults.
+
+---
+### Jak si něco zapamatovat
+- Niklas Luhmann: systém Zettelkasten
+  -  kartotéční listy
+- cloud vs. offline first
+- Digital Garden
+
+Note:
+Téma: Osobní archiv poznámek
+
+Proč?
+- Proces psaní začíná ještě předtím, než si člověk sedne k počítači.
+ - Vytvořit psaný výstup z již napsaných poznámek je totiž
+     nesrovnatelně jednodušší než si vše dávat dohromady
+     v hlavě a teprve potom se to snažit vyjádřit písemně.
+ - Kvalita psaného výstupu a snadnost jeho psaní závisí ze
+   všeho nejvíce na tom, co jste si napsali ještě dřív,
+   než jste si vůbec zvolili téma.
+
+- Otázka: jak si dělat při čtení takové poznámky, které budou užitečné do budoucna?
+  - podtrhávání v knize
+  - psaní do okrajů knih (marginálie)
+  - záložky v knize
+  - výpisky
+  - čtenářské deník
+
+- Jenže problém: tohle nedělá z poznámek adktivní zdroj informací, protože informace se nemohou
+     vytrhnout z předem daného kontextu.
+- Návrh řešení: dvoukrokový proces
+  1. vytvoření upozornění na něco zajímavého: make a brief record of what is important
+  2. vytvoření permanentního a srozumitelného záznamu
+
+Zettelkasten
+- systém informační záznamů doplněný o metadata (tagy, vztah k jiným záznamům)
+  - jedna myšlenka na lístek, aby bylo možné vrát jeden záznam jako nezávislou informaci
+- původně lidé často používali kartotéční listy, tj. malé čtvrtky z lístkového katalogu
+
+
+Zettelkasten a Niklas Luhmann
+- Niklas Luhmann: německý sociolog, teorie systému a samoorganizace (autopoiesisi, vychází teorie komunikace a evolučních principů)
+- 90,000 lístků -> 70 knih a víc než 400 článků
+- měl jeden katalog na bibliografii a druhý na myšlenky
+
+Další, kdo si udržovali osobní lístkový katalog:
+- Walter Benjamin (projekt Arkády)
+- Friedrich Kittler
+- Aby Warburg
+- Roland Barthes (12250 lístků)
+
+principy
+- jedna myšlenka na jeden záznam
+- tagování
+- reference mezi poznámkami
+- poznámky řazeny do sekvencí
+
+Doporučení pro zettelkasten systém:
+- Standardize. Keep everything in one place in one format, give each note a distinct number, and connect related notes.
+- Elaborate. Now, before you write the permanent note, think about how a new idea contributes, challenges or alters something you have written down before by looking through your Zettelkasten for related notes. Write down the outcome of this thinking process as clearly and precisely as possible on a new note.
+- Connect. Most note-taking systems lead to nothing but collections of isolated ideas stored in preconceived categories. Don’t fall for that. Don’t start with preconceived categories and fill them with notes. Instead, let order emerge bottom-up by making connections between your notes and be observant of the differences between them.
+- Give each note a permanent ID. Add your new note behind the most related existing note and make references to other related notes.
+- Mind the context. By using permanent ID’s one note can be embedded in different contexts. It it similar to hyperlinks, but with a strong emphasis on building up note-sequences.
+- Build up note-sequences. If you intend to write articles or books, these note-sequences can later be turned into parts or even whole chapters of your manuscript.
+- Keep an alphabetic index for orientation, but don’t overdo it
+- Make it a habit. When you turn writing like this into a daily habit, you no longer have to decide upfront what to write about or worry about the blank page.
+
+Kde to realizovat: Digital Garden
+- The phrase "digital garden": More abou the process of writing than about the outcome.
+- What is the difference between Digital Garden, note-taking app and a blog?
+  - digital garden is between a note-taking app, and a blog ... not an article, but more than just a reminder
+
+- TiddlyWiki: osobní wiki
+
+Vlastnictví dat
+- offline first
+
+---
+![](img/8/Luhmanns_Zettelhasten_archiv-2_ZK_Oerlinghausen_Uniarchiv.jpg)<!-- .element class="scale-60vh" -->
+<small>Luhmannův archiv</small>
+
+---
+![](img/8/7_ZK-II17_VS-1-18_V.jpg)<!-- .element class="scale-60vh" -->
+
+---
+### Doporučená literatura
+- Johanna Drucker: ["Graphesis: Visual Forms of Knowledge Production"](https://monoskop.org/images/2/2a/Drucker_Johanna_Graphesis_Visual_Forms_of_Knowledge_Production.pdf) (2014)
+- Johanna Drucker: ["Humanities Approaches to Graphical Display"](http://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html)
+- Leo Breiman: [Statistical modeling: The two cultures](http://cda.psych.uiuc.edu/statistical_learning_course/breiman_two_cultures.pdf) (2001)
+
+---
+### Přečíst na příště
+- Donna Haraway: "Manifest Kyborgů: Věda, technologie a socialistický feminismus ke konci dvacátého století", úryvek online [zde](https://monoskop.org/images/d/d9/Haraway_Donna_1991_2002_Manifest_kyborgu_veda_technologie_a_socialisticky_feminismus_ke_konci_dvacateho_stoleti.pdf).
+
+
+---
+###
+Děkuji za pozornost
+
+            </textarea>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        showNotes: false,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+        });
+    </script>
+  </body>
+</html>
