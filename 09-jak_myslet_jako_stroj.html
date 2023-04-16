@@ -111,8 +111,8 @@ A talented team of women, who were around since JPL's beginnings in 1936 and who
 ### Témata
 - imitace: Turingův test
 - formalismus nebo intencionalita: Argument čínského pokoje
-- ARC dataset: měření inteligence
-- Symbol (vector) grounding problem
+- The Octopus Test a velké jazykové modely
+- měření pokroku inteligence: ARC dataset
 
 Note:
 imitační hra:
@@ -121,17 +121,16 @@ imitační hra:
 
 ---
 ### Turingův test
-- Lidská mysl vs. strojové myšlení
-- Alan Turing:
-  - formalizace matematiky (vyřešil Hilbertův Entscheidunsproblem, "Problém zastavení")
-  - Co je to myšlení?
+- Alan Turing
+  - algoritmus a Turingův stroj
+  - Problém zastavení
+  - Mohou stroje myslet?
     - [Computing Machinery and Intelligence](https://academic.oup.com/mind/article-pdf/LIX/236/433/30123314/lix-236-433.pdf)
-      - uspěch v imitační hře -> příznak myšlení
-- vědomí jako počítač (simulace mozku pomocí umělého modelu)
-  - [konekcionismus](https://plato.stanford.edu/entries/connectionism/)
-  - Human Brain Project
+    - úspěch v imitační hře -> myšlení
+![](./img/9/TuringMachine.gif)<!-- .element class="scale-30vh" -->
 
 Note:
+O myšlení není snadné přemýšlet...
 myšlení jiných lidí
   - obsah cizí mysli je v principu nedosažitelný
   - pragmatický postoj, umíme si představit, že jiní lidé myslí a přožívají podobně jako my
@@ -156,15 +155,31 @@ myšlení strojů
         - human reason is ``a universal instrument which can be used in all kinds of situations'' (Descartes, 1642).
     - In thus proposing the differences beween people and machines Descartes did not appeal to our intuition, nor did he suggest that ethereal qualities like a `soul' or `emotion' set us apart from machines.
 
-  - Alan Turing
+Alan Turing
+- rozluštění Enigmy
+- převratné práce v oblasti teoretické informatiky (problém zastavení)
+- Turingův stroj (1936)
 
-Vědomí jako počítač
-- Konekcionismus: https://plato.stanford.edu/entries/connectionism/
- myší mozek:
-   - Blue Brain is a project that was launched in May 2005 by IBM and the Swiss Federal Institute of Technology in Lausanne. The intention of the project was to create a computer simulation of a mammalian cortical column down to the molecular level.[7] The project uses a supercomputer based on IBM's Blue Gene design to simulate the electrical behavior of neurons based upon their synaptic connectivity and ion permeability. The project seeks to eventually reveal insights into human cognition and various psychiatric disorders caused by malfunctioning neurons, such as autism, and to understand how pharmacological agents affect network behavior.
- lidský mozek:
-   - In late 2013, researchers in Japan and Germany used the K computer, then 4th fastest supercomputer, and the simulation software NEST to simulate 1% of the human brain. The simulation modeled a network consisting of 1.73 billion nerve cells connected by 10.4 trillion synapses. To realize this feat, the program recruited 82,944 processors of the K Computer. The process took 40 minutes, to complete the simulation of 1 second of neuronal network activity in real, biological, time.
-  - Human Brain Project - jak zpřístupnění dat, tak vytvoření simulace mozku
+A Turing machine is a mathematical model of computation describing an abstract machine
+manipulates symbols on a strip of tape according to a table of rules.
+Despite the model's simplicity, it is capable of implementing any computer algorithm.
+
+The machine operates on an infinite memory tape divided into discrete cells,
+each of which can hold a single symbol drawn from a finite set of symbols called the alphabet of the machine.
+It has a "head" that, at any point in the machine's operation, is positioned over one of these cells,
+and a "state" selected from a finite set of states.
+At each step of its operation, the head reads the symbol in its cell.
+Then, based on the symbol and the machine's own present state,
+the machine writes a symbol into the same cell,
+and moves the head one step to the left or the right,
+or halts the computation.
+The choice of which replacement symbol to write and which direction to move is based on a finite table that specifies
+what to do for each combination of the current state and the symbol that is read.
+
+- zcela jednoduchý stroj
+- ani naše současné stroje toho neumí víc než Turignův stroj
+- lze na něm implementovat jakýkoliv algoritmus
+- existují úlohy, které na něm implementovat nelze (problém zastavení)
 
 ---
 ![](img/9/Turing_test_diagram.png)<!-- .element class="scale-60vh" -->
@@ -188,7 +203,6 @@ Vědomí jako počítač
 - Argument vědomí: stroj nemá vědomí, ergo nedokáže produkovat umělecká díla, ergo necítí emoce
 - Argument neschopnosti: stroj nedokáže udělat něco skutečně nového
   - Ada Lovelace (programátorka Analytického stroje Charlese Babbage, 1834)
-  - [GPT-2](https://transformer.huggingface.co/doc/gpt2-large)
 
 ---
 ![](img/9/Babbage_difference_engine_drawing.gif)<!-- .element class="scale-60vh" -->
@@ -197,6 +211,21 @@ Vědomí jako počítač
 ---
 ![](img/9/Babbages_Analytical_Engine,_1834-1871.jpg)<!-- .element class="scale-60vh" -->
 ##### Charles Babbage: Analytical Engine (1834, realizace Londýn)
+
+---
+### Myšlení jako program
+- mozek jako počítač (simulace mozku)
+  - [konekcionismus](https://plato.stanford.edu/entries/connectionism/)
+  - Human Brain Project
+
+Note:
+Mozek jako formální struktura
+- Konekcionismus: https://plato.stanford.edu/entries/connectionism/
+ myší mozek:
+   - Blue Brain is a project that was launched in May 2005 by IBM and the Swiss Federal Institute of Technology in Lausanne. The intention of the project was to create a computer simulation of a mammalian cortical column down to the molecular level.[7] The project uses a supercomputer based on IBM's Blue Gene design to simulate the electrical behavior of neurons based upon their synaptic connectivity and ion permeability. The project seeks to eventually reveal insights into human cognition and various psychiatric disorders caused by malfunctioning neurons, such as autism, and to understand how pharmacological agents affect network behavior.
+ lidský mozek:
+   - In late 2013, researchers in Japan and Germany used the K computer, then 4th fastest supercomputer, and the simulation software NEST to simulate 1% of the human brain. The simulation modeled a network consisting of 1.73 billion nerve cells connected by 10.4 trillion synapses. To realize this feat, the program recruited 82,944 processors of the K Computer. The process took 40 minutes, to complete the simulation of 1 second of neuronal network activity in real, biological, time.
+  - Human Brain Project - jak zpřístupnění dat, tak vytvoření simulace mozku
 
 ---
 ### Argument Čínského pokoje
@@ -226,12 +255,49 @@ Námitky proti Argumentu Čínského pokoje
 
 
 ### Co je vlastně inteligence
+- [The Octopus Test](https://aclanthology.org/2020.acl-main.463.pdf) a velké jazykové modely
 - weak vs. strong AI
 - AI vs AGI (Artificial General Intelligence)
 - François Chollet: Abstraction and Reasoning Corpus (ARC) dataset
-- symbol/vector grounding problem a velké jazykové modely(LLMs)
+
+Note:
+ARC 1 was originally released in November 2019,
+was the subject of a public Kaggle competition with a $20,000 prize in early 2020.
+The contest ended with the best entrant solving 20.6% of test tasks.
+Three years later, in 2023, the state-of-the-art on ARC 1 is around 30%.
+
+ARC 1 featured 1,000 tasks split between 400 generally easier training tasks,
+400 validation tasks,
+and 200 tasks forming the private test set.
+Half of the private test set was used as the test set in the original Kaggle competition.
+
+ARC 2 is in progress...
+
+The ARC domain is that it captures important aspects of abstraction and analogy in a rich and open-ended way,
+yet is completely explicit about what prior knowledge is needed for solving problems
+Moreover, the domain is fundamentally about “few-shot learning”—each task has only a few examples
+from which an abstract rule must be inferred.
+
+The octopus test
+Emily Bender, a linguist at the University of Washington
+
+In it, two people are shipwrecked on neighboring islands but find a way to pass messages back and forth via a rope slung between them. Unknown to them, an octopus spots the messages and starts examining them. Over a long period of time, the octopus learns to identify patterns in the squiggles it sees passing back and forth. At some point, it decides to intercept the notes and, using what it has learned of the patterns, begins to write squiggles back by guessing which squiggles should follow the ones it received.
+
+What does the octopus do? It has learned which squiggles follow other squiggles well enough to mimic human communication, but it has no idea what the squiggle “coconut” on this new note really means. What if one islander then asks the other to help her defend herself from an attacking bear? What would the octopus have to do to continue tricking the islander into thinking she was still talking to her neighbor?
+
+The point of the example is to reveal how shallow today’s cutting-edge AI language models really are. There is a lot of hype about natural-language processing, says Bender. But that word “processing” hides a mechanistic truth.
+Humans are active listeners; we create meaning where there is none, or none intended. It is not that the octopus’s utterances make sense, but rather that the islander can make sense of them, Bender says.
+
 
 </textarea></section>
+
+
+
+<section data-transition="none" data-background-image="img/9/octopus.png" data-background-size="contain" data-background-color="black" class="full">
+<div class="caption black">
+The Octopus Test (<a href="https://cdn.dida.do/blog/20211220_mo_ethics-1/octopus.svg">source</a>)
+</div>
+</section>
 
 <section data-transition="none" data-background-image="img/9/gp4_test_performance.png" data-background-size="contain" data-background-color="black" class="full">
 <div class="caption black">
@@ -239,27 +305,35 @@ Námitky proti Argumentu Čínského pokoje
 </div>
 </section>
 
+<section data-transition="none" data-background-image="img/9/ARC_simple_task.webp" data-background-size="contain" data-background-color="black" class="full">
+<div class="caption black">
+<a href="https://openai.com/research/gpt-4">ARC test - příklad 1</a>
+</div>
+</section>
+
+
 <section data-transition="none" data-background-image="img/9/ARC_example.png" data-background-size="contain" data-background-color="black" class="full">
 <div class="caption black">
-<a href="https://openai.com/research/gpt-4">ARC example</a>
+<a href="https://openai.com/research/gpt-4">ARC test - příklad 2</a>
 </div>
 </section>
 
 <section data-transition="none" data-background-image="img/9/a television on top of a cat.png" data-background-size="contain" data-background-color="black" class="full">
 <div class="caption black">
-<a href="https://aiguide.substack.com/p/why-the-abstraction-and-reasoning">Concepts: A television on top of a cat</a>
+<a href="https://aiguide.substack.com/p/why-the-abstraction-and-reasoning">Koncepty: "A television on top of a cat"</a>
 </div>
 </section>
 
 <section data-markdown data-separator-notes="^Note:">
 <textarea data-template>
 
-### "AI nám vezme práci!"
+### AI nám vezme práci!
 - luddité
 - šachy
   - mechanický Turek
   - Kasparov vs. Deep Blue
   - advanced (cyborg) chess
+- hybridní systémy
 
 Note:
 
@@ -293,7 +367,7 @@ Advanced chess
 
 ---
 ![](img/9/Turk-engraving5.jpg)<!-- .element class="scale-60vh" -->
-#### Turek
+#### mechanický Turek
 
 ---
 Technologické okénko
@@ -306,7 +380,38 @@ Technologické okénko
 - promptování velkého jayzkového modelu? (large language model, LLM)
   - [elicit.org](https://elicit.org/)?
   - [GPT3 playground](https://platform.openai.com/playground)?
-- "Kam poslám svoje data"?
+- Pozor: "Kam posílám svoje data"?
+
+---
+### Jak něco napsat
+
+- automatické korektory
+- [ChatGPT](https://chat.openai.com/chat)
+- [AI/human klasifikátor](https://platform.openai.com/ai-text-classifier)
+
+Note:
+Is there some research on readership of romance novels?
+Can you name some authors who have written about this topic?
+How would you summarize Janice A. Radway's essay?
+What methodlogy did Radway use in her research?
+Is there any critical response to Radway's text?
+
+What are the conclusions of Radway's essay?
+Another key conclusion of Radway's essay is that the romance novel industry is structured to meet the demands of its predominantly female readership, and that this industry reinforces gendered expectations and power dynamics. She argues that while the novels themselves may offer women a sense of empowerment, the industry as a whole is ultimately controlled by male-dominated publishing houses and marketing strategies.
+
+What is the argumentation presented in Radway's essay?
+Who did criticize Radway for overemphasising escape in her essay?
+
+
+nedůvěra k modelům
+It’s a language model, and not a knowledge model.
+
+klasifikátor generovaného textu
+- Requires a minimum of 1,000 characters, which is approximately 150 - 250 words.
+- The classifier isn’t always accurate; it can mislabel both AI-generated and human-written text.
+- AI-generated text can be edited easily to evade the classifier.
+- The classifier is likely to get things wrong on text written by children and on text not in English, because it was primarily trained on English content written by adults.
+
 
 ---
 ### Jak si něco zapamatovat
@@ -390,45 +495,22 @@ Vlastnictví dat
 ---
 ![](img/8/7_ZK-II17_VS-1-18_V.jpg)<!-- .element class="scale-60vh" -->
 
----
-### Jak něco napsat
-
-- automatické korektory
-- [ChatGPT](https://chat.openai.com/chat)
-- [AI/human klasifikátor](https://platform.openai.com/ai-text-classifier)
-
-Note:
-Is there some research on readership of romance novels?
-Can you name some authors who have written about this topic?
-How would you summarize Janice A. Radway's essay?
-What methodlogy did Radway use in her research?
-Is there any critical response to Radway's text?
-
-What are the conclusions of Radway's essay?
-Another key conclusion of Radway's essay is that the romance novel industry is structured to meet the demands of its predominantly female readership, and that this industry reinforces gendered expectations and power dynamics. She argues that while the novels themselves may offer women a sense of empowerment, the industry as a whole is ultimately controlled by male-dominated publishing houses and marketing strategies.
-
-What is the argumentation presented in Radway's essay?
-Who did criticize Radway for overemphasising escape in her essay?
-
-
-nedůvěra k modelům
-It’s a language model, and not a knowledge model.
-
-klasifikátor generovaného textu
-- Requires a minimum of 1,000 characters, which is approximately 150 - 250 words.
-- The classifier isn’t always accurate; it can mislabel both AI-generated and human-written text.
-- AI-generated text can be edited easily to evade the classifier.
-- The classifier is likely to get things wrong on text written by children and on text not in English, because it was primarily trained on English content written by adults.
-
 
 ---
-### Další literatura
+### Další literatura (1/2)
 - Filip Tvrdý: Turingův test: Filozofické aspekty umělé inteligence (Togga 2014)
 - Alan Turing: [Computing Machinery and Intelligence](https://phil415.pbworks.com/f/TuringComputing.pdf) (1950)
 - David Cole: [The Chinese Room Argument](https://plato.stanford.edu/entries/chinese-room/) (2004, 2020)
-- François Chollet: [On the Measure of Intelligence](https://arxiv.org/abs/1911.01547) (2019)
+- E. M. Bender, A. Koller: [Climbing towards NLU: On meaning, form, and understanding in the age of data](https://aclanthology.org/2020.acl-main.463.pdf) (2020)
+- D. C. Mollo, R. Millière: [The vector grounding problem](https://arxiv.org/pdf/2304.01481) (2023)
+
+---
+### Další literatura (2/2)
 - Melanie Mitchell: [Why the Abstraction and Reasoning Corpus is interesting and important for AI](https://aiguide.substack.com/p/why-the-abstraction-and-reasoning) (2023)
+- François Chollet: [On the Measure of Intelligence](https://arxiv.org/abs/1911.01547) (2019)
+- [ARC2 playground](https://arc-editor.lab42.global/playground)
 - Steve Henn: [When Women Stopped Coding](https://www.npr.org/sections/money/2014/10/21/357629765/when-women-stopped-coding)
+- [Stanovisko k využívání umělé inteligence ve výuce na Masarykově univerzitě](https://www.muni.cz/o-univerzite/uredni-deska/stanovisko-k-vyuzivani-ai)
 
 ---
 ### Přečíst na příště
