@@ -1,0 +1,459 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Prezentace: Setkání 9 - Jak myslet jako stroj</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/simple.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+    <style>
+      img.scale-60vh { height: 60vh;}
+      img.scale-50vh { height: 50vh;}
+      img.scale-40vh { height: 40vh;}
+      img.scale-30vh { height: 30vh;}
+      img.scale-25vh { height: 25vh;}
+
+      :root {
+        --r-main-font: Helvetica, sans-serif;
+        --r-main-font-size: 35px;
+      }
+      .full {
+        height:100%;
+        width:100%;
+      }
+
+      .caption {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        max-width: 60%;
+        text-align: right;
+
+        font-size: 0.6em;
+        line-height: 1.2em;
+        padding: 0.2em;
+      }
+      .black{
+        color: black;
+        background-color: rgba(255, 255, 255, .8);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown data-separator-notes="^Note:">
+          <textarea data-template>
+## Jak myslet jako stroj
+#### (Teorie humanitních věd 2, 17. 4. 2023)
+
+---
+### Kontext
+- [Google fires engineer for saying its AI has a soul](https://mashable.com/article/google-engineer-fired-ai-lamda-soul-sentient)
+- [Nick Bostrom Says AI Chatbots May Have Some Degree of Sentience](https://futurism.com/the-byte/nick-bostrom-ai-chatbot-sentience)
+- [Artist Refuses Prize After His AI Image Wins at Top Photo Contest](https://petapixel.com/2023/04/14/artist-refuses-prize-after-his-ai-image-wins-at-top-photo-contest/)
+- [ChatGPT 5 is on track to attain artificial general intelligence](https://www.thestatesman.com/supplements/science_supplements/chatgpt-5-is-on-track-to-attain-artificial-general-intelligence-1503171366.html)
+- [Budoucnost AI může být i taková, že vliv lidí na rozhodování postupně klesne k nule, varuje odborník](https://www.irozhlas.cz/veda-technologie/technologie/chatgpt-umela-intelegence-ai_2303242025_elev)
+- [Pause Giant AI Experiments: An Open Letter](https://futureoflife.org/open-letter/pause-giant-ai-experiments/)
+
+Note:
+- sentience = cit
+
+Google fires ...
+Lemoine, an engineer and mystic Christian priest, first announced his firing on the Big Technology Podcast(Opens in a new tab). He said Google's AI chatbot LaMDA (Language Model for Dialog Applications) was concerned about "being turned off" because death would "scare" it "a lot," and that it felt happiness and sadness. Lemoine said he considers LaMDA a friend, drawing an eerie parallel to the 2014 sci-fi romance Her(Opens in a new tab).
+
+bombastické články a divoká veřejná debata
+
+snaha o zasazení do dřívějších úvah o tom
+- co je myšlení
+- čím se liší lidský mozek od počítače
+- čím se liší myšlení od vykonávání programu
+- ultimátní otázka: mohou stroje myslet (tj. dosáhnout stejných nebo lepších kognitivních kompetencí jako lidé ... aby je nahradili ... a kde)
+  - kognitivní kompetence, kde stroje dominují: rychle vyvolávatelná paměť, rychlost výpočtu...
+  - kognitivní kompetence, kde stroje tolik nedominují: vymýšlení nových fyzikálních teorií, oprava rozbité elektrické sítě
+
+schválně jsem zvolila název setkání tak, aby se do něj promítla různá stanoviska, a to že:
+- existuje rozdíl mezi lidským a strojovým myšlením
+- stroj může myslet
+- strojové myšlení může ovlivňovat naše kognitivní schopnosti
+
+</textarea></section>
+
+<section data-transition="none" data-background-image="img/9/eldagsen_THEELECTRICIAN.webp" data-background-size="contain" data-background-color="black" class="full">
+<div class="caption black">
+Boris Eldagsen: <a href="https://www.eldagsen.com/pseudomnesia/">THE ELECTRICIAN</a> (2023)
+<!--
+- Obraz, který vyhrál jednu z kategorií fotografické soutěže SONY Awards 2023
+- vyrobený s využitím AI
+- autor Boris Eldagsen cenu odmítl, protože se nejedná o fotografii
+-->
+</div>
+</section>
+
+<section data-transition="none" data-background-image="img/9/human_computers_3.jpg" data-background-size="contain" data-background-color="black" class="full">
+<div class="caption black">
+<a href="https://www.nasa.gov/feature/jpl/when-computers-were-human">When computers were human...NASA/JPL Caltech</a>
+<!--
+A talented team of women, who were around since JPL's beginnings in 1936 and who were known as computers, were responsible for the number-crunching of launch windows, trajectories, fuel consumption and other details that helped make the U.S. space program a success.
+-->
+</div>
+</section>
+
+<section data-markdown data-separator-notes="^Note:">
+<textarea data-template>
+### Témata
+- imitace: Turingův test
+- formalismus nebo intencionalita: Argument čínského pokoje
+- ARC dataset: měření inteligence
+- Symbol (vector) grounding problem
+
+Note:
+imitační hra:
+- dnes skoro nerozlišitelné, obrázky a texty jsou velmi přesvědčivé
+- myslí tedy stroje?
+
+---
+### Turingův test
+- Lidská mysl vs. strojové myšlení
+- Alan Turing:
+  - formalizace matematiky (vyřešil Hilbertův Entscheidunsproblem, "Problém zastavení")
+  - Co je to myšlení?
+    - [Computing Machinery and Intelligence](https://academic.oup.com/mind/article-pdf/LIX/236/433/30123314/lix-236-433.pdf)
+      - uspěch v imitační hře -> příznak myšlení
+- vědomí jako počítač (simulace mozku pomocí umělého modelu)
+  - [konekcionismus](https://plato.stanford.edu/entries/connectionism/)
+  - Human Brain Project
+
+Note:
+myšlení jiných lidí
+  - obsah cizí mysli je v principu nedosažitelný
+  - pragmatický postoj, umíme si představit, že jiní lidé myslí a přožívají podobně jako my
+  - David Hume: přehnaný skepticismus je neužitečený
+
+myšlení zvířat
+  - René Descartes: zvířata nemyslí
+    - Descartův dualismus tkví v rozlišení dvou substancí, a to tělesné jejíž základní vlastností je rozprostraněnost (RES EXTENSA) a duševní s atributem myšlení (RES COGITANS)
+    - Tělo samo o sobě chápe pouze jako stroj a jeho činnosti jako přijímání potravy, chůzi či vnímání a myšlení se vztahují k duchu.
+    - Zvířata jakožto těla bez ducha jsou pro Descarta pouhými automaty.
+
+myšlení strojů
+  - Descartes v Rozpravě o metodě
+    - skeptický vůči myšlence myslících strojů (automaton)
+    - nanejvýš specializované roboty, které vyvolají iluzi mluvení, ale nebudou umět používta jazyk smyslupně
+       - they "could never use words, or put together other signs, as we do in order to declare our thoughts to others."
+       - Granted one could build a machine that utters words, e.g., if you touch it in one spot it asks you what you want of it, if you touch it in another it cries out you are hurting it
+       - "but it could not give an "appropriately meaningful answer to what is said in its presence, as the dullest of men can do."
+    - nebudou umět myslet obecně:
+        - Even though such machines could do some things as well, or better, than humans, they would inevitably fail in others, which would reveal that they were acting not through understanding but only from the disposition of their organs."
+        - In other words, whereas a machine has a collection of parts to respond to particular situations (a chiming clock, for example, is set off by the position of its gear wheels)
+        - human reason is ``a universal instrument which can be used in all kinds of situations'' (Descartes, 1642).
+    - In thus proposing the differences beween people and machines Descartes did not appeal to our intuition, nor did he suggest that ethereal qualities like a `soul' or `emotion' set us apart from machines.
+
+  - Alan Turing
+
+Vědomí jako počítač
+- Konekcionismus: https://plato.stanford.edu/entries/connectionism/
+ myší mozek:
+   - Blue Brain is a project that was launched in May 2005 by IBM and the Swiss Federal Institute of Technology in Lausanne. The intention of the project was to create a computer simulation of a mammalian cortical column down to the molecular level.[7] The project uses a supercomputer based on IBM's Blue Gene design to simulate the electrical behavior of neurons based upon their synaptic connectivity and ion permeability. The project seeks to eventually reveal insights into human cognition and various psychiatric disorders caused by malfunctioning neurons, such as autism, and to understand how pharmacological agents affect network behavior.
+ lidský mozek:
+   - In late 2013, researchers in Japan and Germany used the K computer, then 4th fastest supercomputer, and the simulation software NEST to simulate 1% of the human brain. The simulation modeled a network consisting of 1.73 billion nerve cells connected by 10.4 trillion synapses. To realize this feat, the program recruited 82,944 processors of the K Computer. The process took 40 minutes, to complete the simulation of 1 second of neuronal network activity in real, biological, time.
+  - Human Brain Project - jak zpřístupnění dat, tak vytvoření simulace mozku
+
+---
+![](img/9/Turing_test_diagram.png)<!-- .element class="scale-60vh" -->
+<small>Turingův test (Imitační hra)</small>
+
+---
+### Turingovský rozhovor
+- Otázka: Napište prosím, sonet na téma železničního mostu přes řeku Forth
+- Odpověď: Tak v tom se mnou nepočítejte. Neumím psát poezii.
+- Otázka: Sečtěte 34957 a 70764.
+- Odpověď: (pauza asi 30 sekund) 105621.
+- Otázka: Hrajete šachy?
+- Odpověď: Ano.
+- Otázka: Mám krále na E1 a žádné další figury. Vy máte jen krále na E3 a věž na A8. Jak budete hrát?
+- Odpověď: (pauza asi 15 sekund) Věž na A1, šach-mat.
+
+---
+### Námitky proti Turingově testu
+- Teologická: Bůh dal myšlení jen lidem
+- Matematická: Existují věci, které stroj nedokáže udělat
+- Argument vědomí: stroj nemá vědomí, ergo nedokáže produkovat umělecká díla, ergo necítí emoce
+- Argument neschopnosti: stroj nedokáže udělat něco skutečně nového
+  - Ada Lovelace (programátorka Analytického stroje Charlese Babbage, 1834)
+  - [GPT-2](https://transformer.huggingface.co/doc/gpt2-large)
+
+---
+![](img/9/Babbage_difference_engine_drawing.gif)<!-- .element class="scale-60vh" -->
+#### Charles Babbage: Difference Engine (1822)
+
+---
+![](img/9/Babbages_Analytical_Engine,_1834-1871.jpg)<!-- .element class="scale-60vh" -->
+##### Charles Babbage: Analytical Engine (1834, realizace Londýn)
+
+---
+### Argument Čínského pokoje
+- John Searle: [Minds, Brains, and Programs](http://www.course.sdu.edu.cn/G2S/eWebEditor/uploadfile/20140227112825015.pdf) (1980)
+  - program vykonávaný počítačem nemůže mít "vědomí" a nedokáže "rozumět" bez ohledu na to, jak inteligentně odpovídá
+- proč?
+  - programy jsou formální (syntaktické)
+    - mysli mají obsahy (sémantiku)
+  - syntax není dostatečná pro sémantiku
+  - závěr: programy nejsou mysli
+Note:
+Argument čínského pokoje
+- Searle then supposes that he is in a closed room and has a book with an English version of the computer program, along with sufficient papers, pencils, erasers, and filing cabinets. Searle could receive Chinese characters through a slot in the door, process them according to the program's instructions, and produce Chinese characters as output. If the computer had passed the Turing test this way, it follows, says Searle, that he would do so as well, simply by running the program manually.
+
+Námitky proti Argumentu Čínského pokoje
+
+</textarea></section>
+
+<section data-transition="none" data-background-image="img/9/chinese-room.jpg" data-background-size="contain" data-background-color="black" class="full">
+<div class="caption black">
+<a href="https://www.shardcore.org/spx/2022/08/05/private-language/">Čínský pokoj J. Searla</a>
+</div>
+</section>
+
+<section data-markdown data-separator-notes="^Note:">
+<textarea data-template>
+
+
+### Co je vlastně inteligence
+- weak vs. strong AI
+- AI vs AGI (Artificial General Intelligence)
+- François Chollet: Abstraction and Reasoning Corpus (ARC) dataset
+- symbol/vector grounding problem a velké jazykové modely(LLMs)
+
+</textarea></section>
+
+<section data-transition="none" data-background-image="img/9/gp4_test_performance.png" data-background-size="contain" data-background-color="black" class="full">
+<div class="caption black">
+<a href="https://openai.com/research/gpt-4">Akademické testy a GPT*</a>
+</div>
+</section>
+
+<section data-transition="none" data-background-image="img/9/ARC_example.png" data-background-size="contain" data-background-color="black" class="full">
+<div class="caption black">
+<a href="https://openai.com/research/gpt-4">ARC example</a>
+</div>
+</section>
+
+<section data-transition="none" data-background-image="img/9/a television on top of a cat.png" data-background-size="contain" data-background-color="black" class="full">
+<div class="caption black">
+<a href="https://aiguide.substack.com/p/why-the-abstraction-and-reasoning">Concepts: A television on top of a cat</a>
+</div>
+</section>
+
+<section data-markdown data-separator-notes="^Note:">
+<textarea data-template>
+
+### "AI nám vezme práci!"
+- luddité
+- šachy
+  - mechanický Turek
+  - Kasparov vs. Deep Blue
+  - advanced (cyborg) chess
+
+Note:
+
+Luddité
+- Luddité byli angličtí řemeslníci a dělníci, kteří na počátku 10. let 19. století utvořili sociální hnutí zvané luddismus za účelem zničit stroje a překazit jejich zavádění v továrnách, poněvadž masová strojová výroba okrádala lidi o práci. Toto hnutí bylo nejrozšířenější mezi textilními řemeslníky, kteří ničili tkalcovské stroje.
+- Pro dnešní dobu je aktuální pojem neoluddismus, který vychází z tradice odmítnutí modernizace. Neoluddité usilují o odstranění moderní technologie, která má špatný vliv na lidstvo a o její nahrazení alternativními a šetrnějšími technologiemi.
+
+mechanický Turek
+- Turek byl mechanický stroj, provozovaný v 18. a 19. století, který jeho majitelé vydávali za šachový automat, ovšem ve skutečnosti byl velmi propracovanou mystifikací. Mechanismus zkonstruoval roku 1771 bratislavský vynálezce Wolfgang von Kempelen a veřejnosti ho předvedl ještě téhož roku na zámku Schönbrunn za přítomnosti Marie Terezie. Stroj hrával šachové partie proti lidským protihráčům nebo předváděl tzv. jezdcovu procházku – šachový problém ukládající hráči objet jezdcem celou šachovnici tak, aby každé pole navštívil právě jednou.
+- Jméno Turek (německy: Türke) stroj obdržel podle svého vzhledu. Jednalo se o mechanické zařízení ukrývající skutečného šachistu, který se v případě kontroly vnitřku skříně přemísťoval z jedné strany na druhou, aby unikl z dohledu diváků. Během hry ovládal Turkovu ruku, přičemž o postavení na šachovnici byl informován pomocí magnetů, na které si svítil svíčkou. Z nejznámějších šachistů, kteří Turka obsluhovali, lze jmenovat např. Johanna Baptistu Allgaiera, Jacquese Moureta, Williama Lewise a Williama Schlumbergera.
+- Turek hrál v různých zemích Evropy a Ameriky po téměř 84 let a porazil mnoho vyzývatelů včetně státníků jako Napoleon Bonaparte a Benjamin Franklin. Ačkoliv mnoho lidí vyjádřilo podezření, že uvnitř stroje se někdo ukrývá, veřejně byl trik vysvětlen až roku 1857 v americkém periodiku The Chess Monthly. V té době již Turek neexistoval: roku 1854 shořel při požáru muzea ve Filadelfii. 
+
+Beep Blue vs. Gary Kasparov
+- Deep Blue versus Garry Kasparov was a pair of six-game chess matches between the world chess champion Garry Kasparov and an IBM supercomputer called Deep Blue.
+- The first match was played in Philadelphia in 1996 and won by Kasparov by 4–2.
+- A rematch was played in New York City in 1997 and won by Deep Blue by 3½–2½.
+- The second match was the first defeat of a reigning world chess champion by a computer under tournament conditions.
+
+Advanced chess
+- cyborg chess, centaur chess
+- a form of chess in which each human player uses a computer chess program to explore the possible results of candidate moves. Despite this computer assistance, it is the human player who controls and decides the game.
+- was introduced for the first time by grandmaster Garry Kasparov, with the aim of bringing together human and computer skills to achieve the following results:
+    increasing the level of play to heights never before seen in chess;
+    producing blunder-free games with the qualities and the beauty of both perfect tactical play and highly meaningful strategic plans;
+    offering the public an overview of the mental processes of strong human chess players and powerful chess computers, and the combination of their forces.
+- A variant or superset of advanced chess is freestyle chess
+
+---
+![](img/9/luddites.jpeg)<!-- .element class="scale-60vh" -->
+#### luddité
+
+---
+![](img/9/Turk-engraving5.jpg)<!-- .element class="scale-60vh" -->
+#### Turek
+
+---
+Technologické okénko
+
+(úvahy, nikoliv návody)
+
+---
+### Jak něco přečíst
+
+- promptování velkého jayzkového modelu? (large language model, LLM)
+  - [elicit.org](https://elicit.org/)?
+  - [GPT3 playground](https://platform.openai.com/playground)?
+- "Kam poslám svoje data"?
+
+---
+### Jak si něco zapamatovat
+- Niklas Luhmann: systém Zettelkasten
+  -  kartotéční listy
+- cloud vs. offline first
+- Digital Garden
+
+Note:
+Téma: Osobní archiv poznámek
+
+Proč?
+- Proces psaní začíná ještě předtím, než si člověk sedne k počítači.
+ - Vytvořit psaný výstup z již napsaných poznámek je totiž
+     nesrovnatelně jednodušší než si vše dávat dohromady
+     v hlavě a teprve potom se to snažit vyjádřit písemně.
+ - Kvalita psaného výstupu a snadnost jeho psaní závisí ze
+   všeho nejvíce na tom, co jste si napsali ještě dřív,
+   než jste si vůbec zvolili téma.
+
+- Otázka: jak si dělat při čtení takové poznámky, které budou užitečné do budoucna?
+  - podtrhávání v knize
+  - psaní do okrajů knih (marginálie)
+  - záložky v knize
+  - výpisky
+  - čtenářské deník
+
+- Jenže problém: tohle nedělá z poznámek adktivní zdroj informací, protože informace se nemohou
+     vytrhnout z předem daného kontextu.
+- Návrh řešení: dvoukrokový proces
+  1. vytvoření upozornění na něco zajímavého: make a brief record of what is important
+  2. vytvoření permanentního a srozumitelného záznamu
+
+Zettelkasten
+- systém informační záznamů doplněný o metadata (tagy, vztah k jiným záznamům)
+  - jedna myšlenka na lístek, aby bylo možné vrát jeden záznam jako nezávislou informaci
+- původně lidé často používali kartotéční listy, tj. malé čtvrtky z lístkového katalogu
+
+
+Zettelkasten a Niklas Luhmann
+- Niklas Luhmann: německý sociolog, teorie systému a samoorganizace (autopoiesisi, vychází teorie komunikace a evolučních principů)
+- 90,000 lístků -> 70 knih a víc než 400 článků
+- měl jeden katalog na bibliografii a druhý na myšlenky
+
+Další, kdo si udržovali osobní lístkový katalog:
+- Walter Benjamin (projekt Arkády)
+- Friedrich Kittler
+- Aby Warburg
+- Roland Barthes (12250 lístků)
+
+principy
+- jedna myšlenka na jeden záznam
+- tagování
+- reference mezi poznámkami
+- poznámky řazeny do sekvencí
+
+Doporučení pro zettelkasten systém:
+- Standardize. Keep everything in one place in one format, give each note a distinct number, and connect related notes.
+- Elaborate. Now, before you write the permanent note, think about how a new idea contributes, challenges or alters something you have written down before by looking through your Zettelkasten for related notes. Write down the outcome of this thinking process as clearly and precisely as possible on a new note.
+- Connect. Most note-taking systems lead to nothing but collections of isolated ideas stored in preconceived categories. Don’t fall for that. Don’t start with preconceived categories and fill them with notes. Instead, let order emerge bottom-up by making connections between your notes and be observant of the differences between them.
+- Give each note a permanent ID. Add your new note behind the most related existing note and make references to other related notes.
+- Mind the context. By using permanent ID’s one note can be embedded in different contexts. It it similar to hyperlinks, but with a strong emphasis on building up note-sequences.
+- Build up note-sequences. If you intend to write articles or books, these note-sequences can later be turned into parts or even whole chapters of your manuscript.
+- Keep an alphabetic index for orientation, but don’t overdo it
+- Make it a habit. When you turn writing like this into a daily habit, you no longer have to decide upfront what to write about or worry about the blank page.
+
+Kde to realizovat: Digital Garden
+- The phrase "digital garden": More abou the process of writing than about the outcome.
+- What is the difference between Digital Garden, note-taking app and a blog?
+  - digital garden is between a note-taking app, and a blog ... not an article, but more than just a reminder
+
+- TiddlyWiki: osobní wiki
+
+Vlastnictví dat
+- offline first
+
+---
+![](img/8/Luhmanns_Zettelhasten_archiv-2_ZK_Oerlinghausen_Uniarchiv.jpg)<!-- .element class="scale-60vh" -->
+<small>Luhmannův archiv</small>
+
+---
+![](img/8/7_ZK-II17_VS-1-18_V.jpg)<!-- .element class="scale-60vh" -->
+
+---
+### Jak něco napsat
+
+- automatické korektory
+- [ChatGPT](https://chat.openai.com/chat)
+- [AI/human klasifikátor](https://platform.openai.com/ai-text-classifier)
+
+Note:
+Is there some research on readership of romance novels?
+Can you name some authors who have written about this topic?
+How would you summarize Janice A. Radway's essay?
+What methodlogy did Radway use in her research?
+Is there any critical response to Radway's text?
+
+What are the conclusions of Radway's essay?
+Another key conclusion of Radway's essay is that the romance novel industry is structured to meet the demands of its predominantly female readership, and that this industry reinforces gendered expectations and power dynamics. She argues that while the novels themselves may offer women a sense of empowerment, the industry as a whole is ultimately controlled by male-dominated publishing houses and marketing strategies.
+
+What is the argumentation presented in Radway's essay?
+Who did criticize Radway for overemphasising escape in her essay?
+
+
+nedůvěra k modelům
+It’s a language model, and not a knowledge model.
+
+klasifikátor generovaného textu
+- Requires a minimum of 1,000 characters, which is approximately 150 - 250 words.
+- The classifier isn’t always accurate; it can mislabel both AI-generated and human-written text.
+- AI-generated text can be edited easily to evade the classifier.
+- The classifier is likely to get things wrong on text written by children and on text not in English, because it was primarily trained on English content written by adults.
+
+
+---
+### Další literatura
+- Filip Tvrdý: Turingův test: Filozofické aspekty umělé inteligence (Togga 2014)
+- Alan Turing: [Computing Machinery and Intelligence](https://phil415.pbworks.com/f/TuringComputing.pdf) (1950)
+- David Cole: [The Chinese Room Argument](https://plato.stanford.edu/entries/chinese-room/) (2004, 2020)
+- François Chollet: [On the Measure of Intelligence](https://arxiv.org/abs/1911.01547) (2019)
+- Melanie Mitchell: [Why the Abstraction and Reasoning Corpus is interesting and important for AI](https://aiguide.substack.com/p/why-the-abstraction-and-reasoning) (2023)
+- Steve Henn: [When Women Stopped Coding](https://www.npr.org/sections/money/2014/10/21/357629765/when-women-stopped-coding)
+
+---
+### Přečíst na příště
+- Theodor W. Adorno, Max Horkheimer, “Kulturní průmysl: osvícenství jako masový podvod”. In “Společenské vědy a audiovize”. Online [zde](https://monoskop.org/images/d/d8/Bendova_Helena_Strnad_Matej_eds_Spolecenske_vedy_a_audiovize_2014.pdf), strany 200-224.
+
+---
+###
+Děkuji za pozornost
+
+            </textarea>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        showNotes: false,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+        });
+    </script>
+  </body>
+</html>
